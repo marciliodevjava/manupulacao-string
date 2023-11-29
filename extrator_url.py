@@ -11,6 +11,8 @@ url_base = url[0:indice_interrogação]
 print(f'URL Base: {url_base}')
 
 cambio = url_base.find('/') + 1
+barra = url_base.find("/")
+print(f'/: {url_base[barra]}')
 url_cambio = url_base[cambio:]
 print(f'Cambio: {url_cambio}')
 
