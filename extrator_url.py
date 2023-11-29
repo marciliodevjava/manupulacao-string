@@ -4,7 +4,7 @@ url = "     "
 
 # Validação da url
 # Sanitização da url
-url = url.replace(" ", "")
+url = url.strip()
 
 if url == "":
     raise ValueError('Valor da URL está vazia')
