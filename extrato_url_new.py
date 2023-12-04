@@ -4,10 +4,13 @@ class ExtratoUrl:
         self.valida_url()
 
     def sanetiza_url(self, url):
-        return url.strip()
+        if type(url) == str:
+            return url.strip()
+        else:
+            return ""
 
     def valida_url(self):
-        if self.__url == '':
+        if not type(self.__url):
             raise ValueError('A URL está vazia.')
 
     def url_base(self):
