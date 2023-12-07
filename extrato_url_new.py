@@ -10,7 +10,7 @@ class ExtratoUrl:
             return ""
 
     def valida_url(self):
-        if not type(self.__url):
+        if not self.__url:
             raise ValueError('A URL está vazia.')
 
     def url_base(self):
@@ -47,7 +47,7 @@ class ExtratoUrl:
 
 
 extrator_url = 'bytebank.com/cambio?moedaOrigem=real'
-
+extrator_url = ''
 url = ExtratoUrl(extrator_url)
 print(f'URL Completa: {url.get_url_completa()}')
 print('URL Base: {}'.format(url.url_base()))
