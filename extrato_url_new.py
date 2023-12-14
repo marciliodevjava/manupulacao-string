@@ -15,8 +15,10 @@ class ExtratoUrl:
         if not self.__url:
             raise ValueError('A URL está vazia.')
         else:
-            base = re.compile("[w]{0,3}[:]{0,1}[//]{0,2}?[a-z][.][com]{1}[.]?[br]?")
-            print("URL VALIDA!")
+            padrao_url = re.compile('(http(s)?://)?(www.)?bytebank.com(.br)?/cambio')
+            match = padrao_url.match(self.__url)
+            url = padrao_url.search(self.__url)
+            print("URL: ", url.group())
 
     def url_base(self):
         indice_interrogação = self.__url.find('?')
