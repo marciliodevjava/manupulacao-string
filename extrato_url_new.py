@@ -47,7 +47,6 @@ class ExtratoUrl:
 
 
 extrator_url = 'bytebank.com/cambio?moedaOrigem=real'
-extrator_url = ''
 url = ExtratoUrl(extrator_url)
 print(f'URL Completa: {url.get_url_completa()}')
 print('URL Base: {}'.format(url.url_base()))
