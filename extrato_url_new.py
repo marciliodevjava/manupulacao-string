@@ -1,3 +1,5 @@
+import re
+
 class ExtratoUrl:
     def __init__(self, url):
         self.__url = self.sanetiza_url(url)
@@ -12,6 +14,9 @@ class ExtratoUrl:
     def valida_url(self):
         if not self.__url:
             raise ValueError('A URL está vazia.')
+        else:
+            base = re.compile("[w]{0,3}[:]{0,1}[//]{0,2}?[a-z][.][com]{1}[.]?[br]?")
+            print("URL VALIDA!")
 
     def url_base(self):
         indice_interrogação = self.__url.find('?')
