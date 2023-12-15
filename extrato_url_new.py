@@ -11,6 +11,9 @@ class ExtratoUrl:
     def __str__(self):
         return str(self.__url)
 
+    def __eq__(self, other):
+        return self.__url == other
+
     def sanetiza_url(self, url):
         if type(url) == str:
             return url.strip()
@@ -61,9 +64,15 @@ class ExtratoUrl:
 
 extrator_url = 'bytebank.com/cambio?moedaOrigem=real'
 url = ExtratoUrl(extrator_url)
+url_dois = ExtratoUrl(extrator_url)
 
 print(f'Tamanho da URL: {len(extrator_url)}')
 print(f'URL: {extrator_url}')
+
+print(f'São iguais: {url == url_dois}')
+
+print(f'ID: {id(url)}')
+print(f'ID: {id(url_dois)}')
 
 # print(f'URL Completa: {url.get_url_completa()}')
 # print('URL Base: {}'.format(url.url_base()))
