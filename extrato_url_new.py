@@ -5,6 +5,12 @@ class ExtratoUrl:
         self.__url = self.sanetiza_url(url)
         self.valida_url()
 
+    def __len__(self):
+        return len(self.__url)
+
+    def __str__(self):
+        return str(self.__url)
+
     def sanetiza_url(self, url):
         if type(url) == str:
             return url.strip()
@@ -55,10 +61,14 @@ class ExtratoUrl:
 
 extrator_url = 'bytebank.com/cambio?moedaOrigem=real'
 url = ExtratoUrl(extrator_url)
-print(f'URL Completa: {url.get_url_completa()}')
-print('URL Base: {}'.format(url.url_base()))
-print("Divisor ?: {}".format(url.get_divisor()))
-print('Divisor /: {}'.format(url.get_divisor_url()))
-print(f'Cambio: {url.get_divisor_cambio()}')
-print(f'Parametros: {url.get_parametro()}')
-print(f'Valor Cambio: {url.get_valor()}')
+
+print(f'Tamanho da URL: {len(extrator_url)}')
+print(f'URL: {extrator_url}')
+
+# print(f'URL Completa: {url.get_url_completa()}')
+# print('URL Base: {}'.format(url.url_base()))
+# print("Divisor ?: {}".format(url.get_divisor()))
+# print('Divisor /: {}'.format(url.get_divisor_url()))
+# print(f'Cambio: {url.get_divisor_cambio()}')
+# print(f'Parametros: {url.get_parametro()}')
+# print(f'Valor Cambio: {url.get_valor()}')
